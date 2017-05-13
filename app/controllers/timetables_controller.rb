@@ -1,4 +1,7 @@
 class TimetablesController < ApplicationController
+
+  layout 'custom'
+
   def index
     @timetables = Timetable.all
   end
