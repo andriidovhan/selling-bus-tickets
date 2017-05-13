@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512202422) do
+ActiveRecord::Schema.define(version: 20170513061918) do
+
+  create_table "timetables", force: :cascade do |t|
+    t.integer "amount_of_place"
+    t.string "place_depart"
+    t.string "place_arrive"
+    t.datetime "time_depart"
+    t.datetime "time_arrive"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", limit: 25

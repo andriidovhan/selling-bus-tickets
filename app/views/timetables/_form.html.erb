@@ -1,0 +1,30 @@
+<%= form_for @timetable do |f| %>
+  <div class="field">
+    <%= f.label :place_depart %>
+    <%= f.text_field :place_depart %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_depart %>
+    <%= f.datetime_field :time_depart,  :value => '2017-06-09 10:20:29' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place_arrive %>
+    <%= f.text_field :place_arrive %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_arrive %>
+    <%= f.datetime_field :time_arrive, :value => '2017-06-10 11:20:29' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount_of_place %>
+    <%= f.number_field :amount_of_place %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

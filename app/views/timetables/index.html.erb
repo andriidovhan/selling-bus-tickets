@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Timetables</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Depart_palce</th>
+    <th>Depart_time</th>
+    <th>Arrive_place</th>
+    <th>Arrive_time</th>
+    <th>Amount_of_place</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @timetables.each do |timetable| %>
+      <tr>
+        <td><%= timetable.place_depart %></td>
+        <td><%= timetable.time_depart %></td>
+        <td><%= timetable.place_arrive %></td>
+        <td><%= timetable.time_arrive %></td>
+        <td><%= timetable.amount_of_place %></td>
+        <td><%= link_to 'Show', timetable %></td>
+        <td><%= link_to 'Edit', edit_timetable_path(timetable), :class => 'action edit' %></td>
+        <td><%= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add direction', new_timetable_path %>

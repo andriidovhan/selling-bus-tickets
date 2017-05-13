@@ -1,0 +1,29 @@
+
+<p>
+  <strong>Depart_place:</strong>
+  <%= @timetable.place_depart %>
+</p>
+
+<p>
+  <strong>Depart_time:</strong>
+  <%= @timetable.time_depart %>
+</p>
+
+<p>
+  <strong>Arrive_place:</strong>
+  <%= @timetable.place_arrive %>
+</p>
+
+<p>
+  <strong>Arrive_time:</strong>
+  <%= @timetable.time_arrive %>
+</p>
+
+<p>
+  <strong>Amount_of_place</strong>
+  <%= @timetable.amount_of_place %>
+</p>
+
+
+<%= link_to 'Edit', edit_timetable_path(@timetable) %> |
+<%= link_to 'Back', timetables_path %>
