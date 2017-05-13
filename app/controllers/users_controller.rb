@@ -15,8 +15,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to @user
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def edit
@@ -25,18 +31,26 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to @user
+
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy
     User.find(params[:id]).destroy
-    redirect_to users_url
+
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+    end
   end
 
   def delete
     destroy
-    # @user = User.find(params[:id])
   end
 
   private

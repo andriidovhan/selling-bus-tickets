@@ -13,8 +13,14 @@ class TimetablesController < ApplicationController
 
   def create
     @timetable = Timetable.new(timetable_params)
-    @timetable.save
-    redirect_to @timetable
+
+    respond_to do |format|
+      if @timetable.save
+        format.html { redirect_to @timetable, notice: 'New direction was successfully added to timetable.' }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def edit
@@ -23,8 +29,14 @@ class TimetablesController < ApplicationController
 
   def update
     @timetable = Timetable.find(params[:id])
-    @timetable.update(timetable_params)
-    redirect_to @timetable
+
+    respond_to do |format|
+      if @timetable.update(timetable_params)
+        format.html { redirect_to @timetable, notice: 'Timetable was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def delete
@@ -34,7 +46,10 @@ class TimetablesController < ApplicationController
 
   def destroy
     Timetable.find(params[:id]).destroy
-    redirect_to timetables_url
+
+    respond_to do |format|
+      format.html { redirect_to timetables_url, notice: 'Direction from timetable was successfully removed.' }
+    end
   end
 
   private
