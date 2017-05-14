@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514084232) do
+ActiveRecord::Schema.define(version: 20170514103733) do
 
   create_table "timetables", force: :cascade do |t|
     t.integer "amount_of_place"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170514084232) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.boolean "admin"
   end
 
 end

@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       redirect_to  access_login_path, notice: "Please log in."
     end
   end
+
+  def check_admin_role
+    @check_admin_role = User.find(session[:user_id]).admin
+  end
 end

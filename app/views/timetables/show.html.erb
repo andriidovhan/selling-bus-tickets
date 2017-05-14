@@ -23,6 +23,7 @@
   <%= @timetable.amount_of_place %>
 </p>
 
-
-<%= link_to 'Edit', edit_timetable_path(@timetable) %> |
-<%= link_to 'Back', timetables_path %>
+<% if User.find(session[:user_id]).admin == true %>
+  <%= link_to 'Edit', edit_timetable_path(@timetable) %> |
+<% end %>
+<%= link_to 'Back to Timetables', timetables_path %>

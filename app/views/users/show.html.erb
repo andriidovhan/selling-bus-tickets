@@ -18,5 +18,12 @@
   <%= @user.password %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %>
+</p>
+
+<% if User.find(session[:user_id]).admin == true %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
+<%= link_to 'Back to List of Users', users_path %>

@@ -6,6 +6,7 @@
     <th>First_name</th>
     <th>Last_name</th>
     <th>Email</th>
+    <th>Admin</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -16,9 +17,12 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
+        <td><%= user.admin %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), :class => 'action edit' %></td>
-        <td><%= link_to 'Destroy', delete_user_path(user), method: :destroy %></td>
+        <% if User.find(session[:user_id]).admin == true %>
+          <td><%= link_to 'Edit', edit_user_path(user), :class => 'action edit' %></td>
+          <td><%= link_to 'Destroy', delete_user_path(user), method: :destroy %></td>
+        <% end %>
       </tr>
   <% end %>
   </tbody>
@@ -26,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<% if User.find(session[:user_id]).admin == true %>
+  <%= link_to 'New User', new_user_path %>
+<% end %>
