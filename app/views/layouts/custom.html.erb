@@ -3,6 +3,13 @@
   <head>
     <title>SellingBusTickets</title>
     <%= stylesheet_link_tag 'primary', media: 'all' %>
+
+    <style>
+      span.status { display: block; width: 10px; height: 10px;
+      margin: 0.25em auto; padding: 0; border: 1px solid #000000; }
+      span.status.true { background: green; color: green; }
+      span.status.flase { background: red; color: red; }
+    </style>
   </head>
   <body>
 

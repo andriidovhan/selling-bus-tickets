@@ -16,3 +16,5 @@ class ApplicationController < ActionController::Base
     @check_admin_role = User.find(session[:user_id]).admin
   end
 end
+
+

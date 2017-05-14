@@ -40,7 +40,7 @@
   <% @tickets.each do |ticket| %>
       <tr>
         <td><%= ticket.number_of_place %></td>
-        <td><%= ticket.available %></td>
+        <td><%= status_tag(ticket.available) %></td>
         <td><%= @timetable.price %></td>
       </tr>
   <% end %>
