@@ -23,7 +23,7 @@
         <td><%= link_to 'Show', timetable %></td>
         <% if User.find(session[:user_id]).admin == true %>
           <td><%= link_to 'Edit', edit_timetable_path(timetable), :class => 'action edit' %></td>
-          <td><%= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', delete_timetable_path(timetable), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
   <% end %>

@@ -11,7 +11,11 @@
     </div>
 
     <div id="main">
-      <p id="notice"><%= notice %></p>
+      <% if !flash[:notice].blank? %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 
       <div id="navigation">
       <%= render(:partial => 'layouts/navigation') unless @disable_navigation %>

@@ -43,7 +43,6 @@ class TimetablesController < ApplicationController
   end
 
   def delete
-    Timetable.find(params[:id]).destroy
     destroy
   end
 
