@@ -13,6 +13,10 @@
     <div id="main">
       <p id="notice"><%= notice %></p>
 
+      <div id="navigation">
+      <%= render(:partial => 'layouts/navigation') %>
+      </div>
+
       <div id="content">
         <%= yield %>
       </div>
