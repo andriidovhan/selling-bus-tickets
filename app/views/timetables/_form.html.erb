@@ -6,7 +6,7 @@
 
   <div class="field">
     <%= f.label :time_depart %>
-    <%= f.datetime_field :time_depart,  :value => '2017-06-09 10:20:29' %>
+    <%= f.datetime_select :time_depart, :minute_step => 15 %>
   </div>
 
   <div class="field">
@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :time_arrive %>
-    <%= f.datetime_field :time_arrive, :value => '2017-06-10 11:20:29' %>
+    <%= f.datetime_select :time_arrive, :minute_step => 15 %>
   </div>
 
   <div class="field">
