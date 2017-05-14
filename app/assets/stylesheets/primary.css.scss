@@ -73,6 +73,14 @@ a:hover {}
 #content {
   padding: 10px;
 
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.login form {
+  margin: 10px 700px;
 }
 
 #footer {
