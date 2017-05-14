@@ -3,6 +3,7 @@ class AccessController < ApplicationController
   layout 'custom'
 
   before_action :confirmed_logged_in, :except => [:login, :attempt_login, :logout]
+  before_action :disable_navigation
 
   def login
     render 'login'
@@ -25,5 +26,11 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Logged out."
     redirect_to(access_login_path)
+  end
+
+  private
+
+  def disable_navigation
+    @disable_navigation = true
   end
 end

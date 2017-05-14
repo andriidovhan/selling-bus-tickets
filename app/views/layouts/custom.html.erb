@@ -14,7 +14,7 @@
       <p id="notice"><%= notice %></p>
 
       <div id="navigation">
-      <%= render(:partial => 'layouts/navigation') %>
+      <%= render(:partial => 'layouts/navigation') unless @disable_navigation %>
       </div>
 
       <div id="content">
