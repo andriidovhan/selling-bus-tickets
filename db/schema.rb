@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170513061918) do
+ActiveRecord::Schema.define(version: 20170514084232) do
 
   create_table "timetables", force: :cascade do |t|
     t.integer "amount_of_place"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20170513061918) do
     t.string "first_name", limit: 25
     t.string "last_name", limit: 25
     t.string "email", null: false
-    t.string "password", limit: 30, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

@@ -8,7 +8,7 @@ class AccessController < ApplicationController
   def attempt_login
     if params[:email].present? && params[:password].present?
       user = User.find_by(:email => params[:email])
-      if user && user.password == params[:password]
+      if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect_to timetables_url, notice: "You are now logged in."
       else
