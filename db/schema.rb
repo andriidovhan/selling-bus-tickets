@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514103733) do
+ActiveRecord::Schema.define(version: 20170514202118) do
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer "number_of_place"
+    t.boolean "available"
+    t.integer "timetable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["timetable_id"], name: "index_tickets_on_timetable_id"
+  end
 
   create_table "timetables", force: :cascade do |t|
     t.integer "amount_of_place"
@@ -20,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170514103733) do
     t.datetime "time_arrive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "price"
   end
 
   create_table "users", force: :cascade do |t|

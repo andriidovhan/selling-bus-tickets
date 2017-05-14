@@ -8,6 +8,7 @@ class TimetablesController < ApplicationController
 
   def show
     @timetable = Timetable.find(params[:id])
+    @tickets = @timetable.tickets
   end
 
   def new
@@ -56,6 +57,6 @@ class TimetablesController < ApplicationController
 
   private
   def timetable_params
-    params.require(:timetable).permit(:amount_of_place, :place_depart, :place_arrive, :time_depart, :time_arrive)
+    params.require(:timetable).permit(:amount_of_place, :place_depart, :place_arrive, :time_depart, :time_arrive, :price)
   end
 end

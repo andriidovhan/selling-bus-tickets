@@ -24,6 +24,11 @@
     <%= f.number_field :amount_of_place %>
   </div>
 
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price, step: :any %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

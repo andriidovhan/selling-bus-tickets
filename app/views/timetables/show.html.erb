@@ -23,7 +23,33 @@
   <%= @timetable.amount_of_place %>
 </p>
 
+<br>
+
+<h1>Tickets:</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Number_of_place</th>
+    <th>Available</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.number_of_place %></td>
+        <td><%= ticket.available %></td>
+        <td><%= @timetable.price %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <% if User.find(session[:user_id]).admin == true %>
-  <%= link_to 'Edit', edit_timetable_path(@timetable) %> |
+  <%= link_to 'Edit Direction', edit_timetable_path(@timetable) %> |
 <% end %>
 <%= link_to 'Back to Timetables', timetables_path %>
