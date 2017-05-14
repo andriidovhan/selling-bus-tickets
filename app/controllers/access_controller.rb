@@ -2,7 +2,10 @@ class AccessController < ApplicationController
 
   layout 'custom'
 
+  before_action :confirmed_logged_in, :except => [:login, :attempt_login, :logout]
+
   def login
+    render 'login'
   end
 
   def attempt_login
@@ -12,7 +15,7 @@ class AccessController < ApplicationController
         session[:user_id] = user.id
         redirect_to timetables_url, notice: "You are now logged in."
       else
-        flash.now[:error] = "Invalid username/password combination."
+        flash.now[:notice] = "Invalid username/password combination."
         render('login')
       end
     end
