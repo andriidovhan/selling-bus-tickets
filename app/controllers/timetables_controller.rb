@@ -1,9 +1,11 @@
 class TimetablesController < ApplicationController
+  helper_method :sort_column, :sort_direction
 
   layout 'custom'
 
   def index
-    @timetables = Timetable.all
+    params[:sort] ||= 'time_depart'
+    @timetables = Timetable.order(params[:sort].to_s + " " + params[:direction].to_s)
   end
 
   def show
@@ -58,5 +60,13 @@ class TimetablesController < ApplicationController
   private
   def timetable_params
     params.require(:timetable).permit(:amount_of_place, :place_depart, :place_arrive, :time_depart, :time_arrive, :price)
+  end
+
+  def sort_column
+    Timetable.column_names.include?(params[:sort]) ? params[:sort] : "place_depart"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

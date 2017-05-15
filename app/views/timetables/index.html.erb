@@ -1,14 +1,14 @@
 <h1>Timetables</h1>
 
-<table>
+<table class="pretty">
   <thead>
   <tr>
-    <th>Depart_palce</th>
-    <th>Depart_time</th>
-    <th>Arrive_place</th>
-    <th>Arrive_time</th>
-    <th>Amount_of_place</th>
-    <th>Price</th>
+    <th><%= sortable "place_depart", "Depart place" %></th>
+    <th><%= sortable "time_depart", "Depart time" %></th>
+    <th><%= sortable "place_arrive", "Arrive place" %></th>
+    <th><%= sortable "time_arrive", "Arrive time" %></th>
+    <th><%= sortable "amount_of_place", "Amount of place" %></th>
+    <th><%= sortable "price", "Price" %></th>
     <th colspan="3"></th>
   </tr>
   </thead>
