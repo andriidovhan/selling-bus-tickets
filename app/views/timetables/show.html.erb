@@ -42,6 +42,13 @@
         <td><%= ticket.number_of_place %></td>
         <td><%= status_tag(ticket.available) %></td>
         <td><%= @timetable.price %></td>
+        <% if ticket.available %>
+          <td><%= link_to 'Buy this ticket', buy_ticket_path(ticket) %></td>
+        <% end %>
+
+        <% unless ticket.user_id == 0 %>
+          <td><%= User.find(ticket.user_id).email %></td>
+        <% end %>
       </tr>
   <% end %>
   </tbody>

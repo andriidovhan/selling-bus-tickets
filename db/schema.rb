@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514202118) do
+ActiveRecord::Schema.define(version: 20170515080234) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "number_of_place"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170514202118) do
     t.integer "timetable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", default: 0
     t.index ["timetable_id"], name: "index_tickets_on_timetable_id"
   end
 
@@ -40,6 +41,8 @@ ActiveRecord::Schema.define(version: 20170514202118) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.boolean "admin"
+    t.integer "ticket_id"
+    t.index ["ticket_id"], name: "index_users_on_ticket_id"
   end
 
 end

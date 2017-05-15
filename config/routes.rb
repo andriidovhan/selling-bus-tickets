@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'tickets/:id/buy' => "tickets#edit", as: "buy_ticket"
+  put 'tickets/:id' => "tickets#update"
+
   root to: 'timetables#index'
   get 'access/login'
   post 'access/attempt_login'
