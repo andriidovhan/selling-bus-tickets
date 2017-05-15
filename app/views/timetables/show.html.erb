@@ -46,7 +46,7 @@
           <td><%= link_to 'Buy this ticket', buy_ticket_path(ticket) %></td>
         <% end %>
 
-        <% unless ticket.user_id == 0 %>
+        <% if ticket.user_id.present? %>
           <td><%= User.find(ticket.user_id).email %></td>
         <% end %>
       </tr>

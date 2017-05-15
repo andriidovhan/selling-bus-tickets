@@ -1,5 +1,7 @@
 <h1>Editing Timetable</h1>
 
+<%= @timetable.errors.full_messages if @timetable.errors.any? %>
+
 <%= render 'form', timetable: @timetable %>
 
 <%= link_to 'Show', @timetable %> |
