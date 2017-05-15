@@ -1,0 +1,174 @@
+/* Primary stylesheet */
+/* Colors */
+/* line 15, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 20, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+body {
+  width: 100%;
+  min-width: 980px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font: 14px Vernada, Lucida, Arial, Helvetica, sans-serif;
+  color: #332318;
+}
+
+/* line 30, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+p, td, ul, ol, li, dl, dt, dd {
+  font-family: Vernada, Lucida, Arial, Helvetica, sans-serif;
+}
+
+/* line 34, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+img {
+  border: none;
+}
+
+/* line 35, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+table {
+  border-collapse: collapse;
+}
+
+/* line 37, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+table tr th, table tr td {
+  vertical-align: top;
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid black;
+}
+
+/* line 43, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+a, a:visited {
+  color: #993120;
+}
+
+/* line 46, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+.clear {
+  clear: both;
+}
+
+/* line 47, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+.center {
+  text-align: center;
+}
+
+/* Structure */
+/* line 50, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#header {
+  height: 4em;
+  padding-top: 1em;
+  text-align: center;
+  background: #993120;
+  color: #FFFFFF;
+}
+/* line 57, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 60, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#main {
+  min-height: 420px;
+  background: #F2DC87;
+}
+
+/* line 65, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#navigation {
+  float: left;
+  width: 180px;
+  min-height: 400px;
+  padding: 10px;
+  background: #94B26F;
+  color: #B6D491;
+}
+
+/* line 74, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#content {
+  padding: 10px;
+}
+/* line 77, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#content h2 {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 83, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+.login form {
+  margin: 10px 700px;
+}
+
+/* line 87, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+.notice {
+  height: 1.25em;
+  padding: 0.5em;
+  text-align: center;
+  background: #B6D491;
+  color: #4C2516;
+}
+
+/* line 95, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#footer {
+  clear: both;
+  height: 2.5em;
+  text-align: right;
+  background: #4C2516;
+  color: #F2DC87;
+}
+/* line 102, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#footer p {
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+/* Navigation */
+/* line 110, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 114, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#navigation ul li {
+  margin-bottom: 0.5em;
+}
+/* line 117, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#navigation ul ul {
+  margin: 0.5em 0 0 1em;
+  font-size: 0.9em;
+}
+/* line 123, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#navigation a {
+  text-decoration: none;
+  padding: 1px 3px;
+}
+/* line 126, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#navigation a:hover {
+  background: #F2DC87;
+}
+
+/* Content */
+/* line 133, /Users/andrii/Documents/selling_bus_tickets/app/assets/stylesheets/primary.css.scss */
+#content h2 {
+  color: #4C2516;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * require_tree .
+
+
+ */
+
