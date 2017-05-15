@@ -58,6 +58,7 @@ class TimetablesController < ApplicationController
   end
 
   private
+
   def timetable_params
     params.require(:timetable).permit(:amount_of_place, :place_depart, :place_arrive, :time_depart, :time_arrive, :price)
   end
