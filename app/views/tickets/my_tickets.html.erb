@@ -4,6 +4,7 @@
   <thead>
   <tr>
     <th><%= "Ticket_id" %></th>
+    <th><%= "Number_of_place" %></th>
     <th><%= "From" %></th>
     <th><%= "Depart_time" %></th>
     <th><%= "To" %></th>
@@ -15,6 +16,7 @@
   <% @tickets.each do |ticket| %>
       <tr>
         <td><%= ticket.id %></td>
+        <td><%= ticket.number_of_place %></td>
         <td><%= Timetable.find(ticket.timetable_id).place_depart %></td>
         <td><%= Timetable.find(ticket.timetable_id).time_depart %></td>
         <td><%= Timetable.find(ticket.timetable_id).place_arrive %></td>
