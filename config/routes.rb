@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'tickets/:id/buy' => "tickets#edit", as: "buy_ticket"
+  get 'tickets/my_tickets' => "tickets#my_tickets", as: "my_tickets"
   put 'tickets/:id' => "tickets#update"
 
   root to: 'timetables#index'

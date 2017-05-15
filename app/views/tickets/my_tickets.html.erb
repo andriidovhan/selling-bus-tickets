@@ -1,0 +1,25 @@
+<h1>My Tickets:</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th><%= "Ticket_id" %></th>
+    <th><%= "From" %></th>
+    <th><%= "Depart_time" %></th>
+    <th><%= "To" %></th>
+    <th><%= "Arrive_time" %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.id %></td>
+        <td><%= Timetable.find(ticket.timetable_id).place_depart %></td>
+        <td><%= Timetable.find(ticket.timetable_id).time_depart %></td>
+        <td><%= Timetable.find(ticket.timetable_id).place_arrive %></td>
+        <td><%= Timetable.find(ticket.timetable_id).time_arrive %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

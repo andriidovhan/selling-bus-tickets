@@ -1,4 +1,7 @@
 class TicketsController < ApplicationController
+
+  layout 'custom'
+
   def edit
     @ticket = Ticket.find(params[:id])
     update
@@ -16,6 +19,11 @@ class TicketsController < ApplicationController
         end
       end
     end
+  end
+
+  def my_tickets
+    @tickets = Ticket.where(user_id: session[:user_id])
+    render 'my_tickets'
   end
 
   private
