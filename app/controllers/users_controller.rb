@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    begin
+      @user = User.find(params[:id])
+    rescue
+      redirect_to users_path, notice: "The requested user with id: '#{params[:id]}' was not found."
+    end
   end
 
   def new

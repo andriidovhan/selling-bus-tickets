@@ -10,8 +10,12 @@ class TimetablesController < ApplicationController
   end
 
   def show
-    @timetable = Timetable.find(params[:id])
-    @tickets = @timetable.tickets
+    begin
+      @timetable = Timetable.find(params[:id])
+      @tickets = @timetable.tickets
+    rescue
+      redirect_to timetables_path, notice: "The requested direction with id: '#{params[:id]}' was not found."
+    end
   end
 
   def new
