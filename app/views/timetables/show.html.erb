@@ -1,57 +1,61 @@
-<p>
-  <strong>Depart_place:</strong>
-  <%= @timetable.place_depart %>
-</p>
-
-<p>
-  <strong>Depart_time:</strong>
-  <%= @timetable.time_depart %>
-</p>
-
-<p>
-  <strong>Arrive_place:</strong>
-  <%= @timetable.place_arrive %>
-</p>
-
-<p>
-  <strong>Arrive_time:</strong>
-  <%= @timetable.time_arrive %>
-</p>
-
-<p>
-  <strong>Amount_of_place</strong>
-  <%= @timetable.amount_of_place %>
-</p>
-
-<br>
-
-<h1>Tickets:</h1>
-
 <table>
-  <thead>
-  <tr>
-    <th>Number_of_place</th>
-    <th>Available</th>
-    <th>Price</th>
-  </tr>
-  </thead>
+  <th width="50%">
+    <h>Info:</h>
+      <p>
+        <strong>Depart_place:</strong>
+        <%= @timetable.place_depart %>
+      </p>
 
-  <tbody>
-  <% @tickets.each do |ticket| %>
-      <tr>
-        <td><%= ticket.number_of_place %></td>
-        <td><%= status_tag(ticket.available) %></td>
-        <td><%= @timetable.price %></td>
-        <% if ticket.available %>
-          <td><%= link_to 'Buy this ticket', buy_ticket_path(ticket) %></td>
-        <% end %>
+      <p>
+        <strong>Depart_time:</strong>
+        <%= @timetable.time_depart %>
+      </p>
 
-        <% if ticket.user_id.present? %>
-          <td><%= User.find(ticket.user_id).email %></td>
-        <% end %>
-      </tr>
-  <% end %>
-  </tbody>
+      <p>
+        <strong>Arrive_place:</strong>
+        <%= @timetable.place_arrive %>
+      </p>
+
+      <p>
+        <strong>Arrive_time:</strong>
+        <%= @timetable.time_arrive %>
+      </p>
+
+      <p>
+        <strong>Amount_of_place</strong>
+        <%= @timetable.amount_of_place %>
+      </p>
+  </th>
+  <th width="50%">
+    <h>Tickets:</h>
+
+      <table align="center">
+        <thead>
+          <tr>
+            <th>Number_of_place</th>
+            <th>Available</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @tickets.each do |ticket| %>
+            <tr>
+              <td><%= ticket.number_of_place %></td>
+              <td><%= status_tag(ticket.available) %></td>
+              <td><%= @timetable.price %></td>
+              <% if ticket.available %>
+                <td><%= link_to 'Buy this ticket', buy_ticket_path(ticket) %></td>
+              <% end %>
+
+              <% if ticket.user_id.present? %>
+                <td><%= User.find(ticket.user_id).email %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <th>
 </table>
 
 <br>
