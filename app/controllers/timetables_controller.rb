@@ -4,6 +4,7 @@ class TimetablesController < ApplicationController
   layout 'custom'
 
   def index
+    remove_old_direction
     params[:sort] ||= 'time_depart'
     @timetables = Timetable.order(params[:sort].to_s + " " + params[:direction].to_s)
   end
@@ -69,5 +70,11 @@ class TimetablesController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def remove_old_direction
+    Timetable.all.each  do |direction|
+      direction.destroy if direction.time_depart < Time.now
+    end
   end
 end
