@@ -6,7 +6,7 @@
 
   <div class="field">
     <%= f.label :time_depart %>
-    <%= f.datetime_select :time_depart, :minute_step => 15 %>
+    <%= f.datetime_select :time_depart, :start_year => Date.today.year, :end_year => Date.today.year + 2, :minute_step => 15 %>
   </div>
 
   <div class="field">
@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :time_arrive %>
-    <%= f.datetime_select :time_arrive, :minute_step => 15 %>
+    <%= f.datetime_select :time_arrive, :start_year => Date.today.year, :end_year => Date.today.year + 2, :minute_step => 15 %>
   </div>
 
   <div class="field">
