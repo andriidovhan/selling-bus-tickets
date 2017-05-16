@@ -42,6 +42,13 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry'
   gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  # gem 'guard-rspec'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'rails-controller-testing'
 end
 
 group :development do
